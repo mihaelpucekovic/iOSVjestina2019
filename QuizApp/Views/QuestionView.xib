@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="QuizApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="NXq-hc-rIv"/>
+                <outlet property="odgovor1" destination="Xsd-5L-p7t" id="mdH-o0-mHp"/>
+                <outlet property="odgovor2" destination="kB2-Lg-bNm" id="3sn-uB-VSr"/>
+                <outlet property="odgovor3" destination="MKW-hw-kLt" id="5g5-xg-zOm"/>
+                <outlet property="odgovor4" destination="xia-bL-MqH" id="3ot-ee-IaQ"/>
+                <outlet property="pitanje" destination="THW-6t-S8Q" id="OHT-4J-724"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="397"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitanje" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THW-6t-S8Q">
+                    <rect key="frame" x="10" y="49" width="394" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsd-5L-p7t">
+                    <rect key="frame" x="20" y="94.5" width="374" height="30"/>
+                    <state key="normal" title="Odgovor 1"/>
+                    <connections>
+                        <action selector="answer1Selected:" destination="-1" eventType="touchUpInside" id="HPl-KM-bdg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kB2-Lg-bNm">
+                    <rect key="frame" x="20" y="144.5" width="374" height="30"/>
+                    <state key="normal" title="Odgovor 2"/>
+                    <connections>
+                        <action selector="answer2Selected:" destination="-1" eventType="touchUpInside" id="4jM-9V-yNT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xia-bL-MqH">
+                    <rect key="frame" x="20" y="244.5" width="374" height="30"/>
+                    <state key="normal" title="Odgovor 4"/>
+                    <connections>
+                        <action selector="answer4Selected:" destination="-1" eventType="touchUpInside" id="d7o-l1-r7e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-hw-kLt">
+                    <rect key="frame" x="20" y="194.5" width="374" height="30"/>
+                    <state key="normal" title="Odgovor 3"/>
+                    <connections>
+                        <action selector="answer3Selected:" destination="-1" eventType="touchUpInside" id="7ML-bj-H9F"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="THW-6t-S8Q" secondAttribute="trailing" constant="10" id="68z-Ck-9co"/>
+                <constraint firstItem="xia-bL-MqH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="6ps-Qf-c2Z"/>
+                <constraint firstItem="MKW-hw-kLt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="7gl-0z-8va"/>
+                <constraint firstItem="THW-6t-S8Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="83M-yL-VTE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kB2-Lg-bNm" secondAttribute="trailing" constant="20" id="8b4-ap-rGM"/>
+                <constraint firstItem="MKW-hw-kLt" firstAttribute="top" secondItem="kB2-Lg-bNm" secondAttribute="bottom" constant="20" id="LRq-eh-A1F"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xia-bL-MqH" secondAttribute="trailing" constant="20" id="Pj0-nk-ALE"/>
+                <constraint firstItem="kB2-Lg-bNm" firstAttribute="top" secondItem="Xsd-5L-p7t" secondAttribute="bottom" constant="20" id="Q2f-Mo-JBK"/>
+                <constraint firstItem="kB2-Lg-bNm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Wya-Rl-uAf"/>
+                <constraint firstItem="Xsd-5L-p7t" firstAttribute="top" secondItem="THW-6t-S8Q" secondAttribute="bottom" constant="25" id="XKL-S7-z5P"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xsd-5L-p7t" secondAttribute="trailing" constant="20" id="c6N-NT-eeR"/>
+                <constraint firstItem="THW-6t-S8Q" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="dyd-mW-RZc"/>
+                <constraint firstItem="xia-bL-MqH" firstAttribute="top" secondItem="MKW-hw-kLt" secondAttribute="bottom" constant="20" id="fB8-Ft-qcf"/>
+                <constraint firstItem="Xsd-5L-p7t" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="gQK-hb-ir6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MKW-hw-kLt" secondAttribute="trailing" constant="20" id="hbz-nr-tnw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="299.66517857142856"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SingleQuestionView" customModule="QuizApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="431"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Dr-1O-zw9">
+                    <rect key="frame" x="20" y="102" width="374" height="30"/>
+                    <state key="normal" title="Odgovor1"/>
+                    <connections>
+                        <action selector="answer1Selected:" destination="iN0-l3-epB" eventType="touchUpInside" id="U1c-xl-bGA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E24-VD-lPF">
+                    <rect key="frame" x="20" y="152" width="374" height="30"/>
+                    <state key="normal" title="Odgovor2"/>
+                    <connections>
+                        <action selector="answer2Selected:" destination="iN0-l3-epB" eventType="touchUpInside" id="xn6-gQ-7Fs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D56-96-KTB">
+                    <rect key="frame" x="20" y="202" width="374" height="30"/>
+                    <state key="normal" title="Odgovor 3"/>
+                    <connections>
+                        <action selector="answer3Selected:" destination="iN0-l3-epB" eventType="touchUpInside" id="WTa-Po-6ZN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmx-qY-4OE">
+                    <rect key="frame" x="20" y="252" width="374" height="30"/>
+                    <state key="normal" title="Odgovor 4"/>
+                    <connections>
+                        <action selector="answer4Selected:" destination="iN0-l3-epB" eventType="touchUpInside" id="Y1Y-Ix-Ogk"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitanje" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ves-8r-Yf4">
+                    <rect key="frame" x="20" y="64" width="374" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ves-8r-Yf4" secondAttribute="trailing" constant="20" id="5OF-bU-cGq"/>
+                <constraint firstItem="gmx-qY-4OE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="5XR-B1-8WL"/>
+                <constraint firstItem="0Dr-1O-zw9" firstAttribute="top" secondItem="Ves-8r-Yf4" secondAttribute="bottom" constant="20" id="8fz-OC-AjT"/>
+                <constraint firstItem="gmx-qY-4OE" firstAttribute="top" secondItem="D56-96-KTB" secondAttribute="bottom" constant="20" id="AzO-vL-u0p"/>
+                <constraint firstItem="E24-VD-lPF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="I5b-kK-kL5"/>
+                <constraint firstItem="D56-96-KTB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="JnK-JC-GTt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0Dr-1O-zw9" secondAttribute="trailing" constant="20" id="LNk-TX-fH8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gmx-qY-4OE" secondAttribute="trailing" constant="20" id="Qu8-wD-vBa"/>
+                <constraint firstItem="0Dr-1O-zw9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="TpM-Lc-doz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="E24-VD-lPF" secondAttribute="trailing" constant="20" id="WWn-6K-Pbb"/>
+                <constraint firstItem="D56-96-KTB" firstAttribute="top" secondItem="E24-VD-lPF" secondAttribute="bottom" constant="20" id="bW6-gB-ekN"/>
+                <constraint firstItem="E24-VD-lPF" firstAttribute="top" secondItem="0Dr-1O-zw9" secondAttribute="bottom" constant="20" id="bcI-Si-RNb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="D56-96-KTB" secondAttribute="trailing" constant="20" id="d4f-lj-jmv"/>
+                <constraint firstItem="Ves-8r-Yf4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="lIz-nj-u6U"/>
+                <constraint firstItem="Ves-8r-Yf4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="lxU-FJ-EJD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="labelPitanje" destination="Ves-8r-Yf4" id="J5Z-8L-6nz"/>
+                <outlet property="odgovor1" destination="0Dr-1O-zw9" id="9d2-7h-PDx"/>
+                <outlet property="odgovor2" destination="E24-VD-lPF" id="hTs-2M-aUT"/>
+                <outlet property="odgovor3" destination="D56-96-KTB" id="kTj-x6-ABL"/>
+                <outlet property="odgovor4" destination="gmx-qY-4OE" id="SQ8-CH-0wx"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="183.81696428571428"/>
+        </view>
+    </objects>
+</document>

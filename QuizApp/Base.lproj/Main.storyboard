@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N8T-a5-sGB">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -10,13 +10,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47R-eE-a5w">
-                                <rect key="frame" x="150" y="20" width="75" height="30"/>
+                                <rect key="frame" x="40" y="20" width="295" height="30"/>
                                 <state key="normal" title="Dohvati"/>
                                 <connections>
                                     <action selector="dohvatiKvizove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z1V-cj-xIG"/>
@@ -49,20 +49,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9n-zr-QE0" customClass="QuestionView" customModule="QuizApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="268" width="335" height="342"/>
+                                <rect key="frame" x="20" y="268" width="335" height="302"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsS-IL-xHJ">
+                                <rect key="frame" x="40" y="590" width="295" height="30"/>
+                                <state key="normal" title="Odjava"/>
+                                <connections>
+                                    <action selector="odjava:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEh-Iz-NGa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Eb-pL-80F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="BFe-V2-Ynj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Eb-pL-80F" secondAttribute="trailing" constant="10" id="CtG-1d-Hf1"/>
                             <constraint firstItem="ILe-cb-ByR" firstAttribute="top" secondItem="JjU-Vm-hcN" secondAttribute="bottom" constant="15" id="Gzj-QZ-DkB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="47R-eE-a5w" secondAttribute="trailing" constant="150" id="MOd-8X-qzJ"/>
+                            <constraint firstItem="jsS-IL-xHJ" firstAttribute="top" secondItem="J9n-zr-QE0" secondAttribute="bottom" constant="20" id="HBY-iR-6t8"/>
+                            <constraint firstItem="jsS-IL-xHJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="K4n-K7-AME"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="47R-eE-a5w" secondAttribute="trailing" constant="40" id="MOd-8X-qzJ"/>
+                            <constraint firstItem="6Eb-pL-80F" firstAttribute="top" secondItem="jsS-IL-xHJ" secondAttribute="bottom" constant="10" id="PG8-cK-7w3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JjU-Vm-hcN" secondAttribute="trailing" constant="10" id="Pvh-kN-QGF"/>
                             <constraint firstItem="ILe-cb-ByR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RQ2-wj-tAt"/>
                             <constraint firstItem="J9n-zr-QE0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RxO-Pn-XsS"/>
-                            <constraint firstItem="6Eb-pL-80F" firstAttribute="top" secondItem="J9n-zr-QE0" secondAttribute="bottom" constant="20" id="Wmb-1V-4T1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jsS-IL-xHJ" secondAttribute="trailing" constant="40" id="WI6-DA-OJH"/>
                             <constraint firstItem="JjU-Vm-hcN" firstAttribute="top" secondItem="a1x-OT-cII" secondAttribute="bottom" constant="25" id="Zsh-I9-uNv"/>
                             <constraint firstItem="a1x-OT-cII" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="app-bs-CuF"/>
                             <constraint firstItem="47R-eE-a5w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eff-jd-BZC"/>
@@ -72,10 +82,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Eb-pL-80F" secondAttribute="bottom" constant="20" id="lkG-Xq-luE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1x-OT-cII" secondAttribute="trailing" constant="10" id="nhd-0h-wSV"/>
                             <constraint firstItem="J9n-zr-QE0" firstAttribute="top" secondItem="ILe-cb-ByR" secondAttribute="bottom" constant="20" id="tcn-TH-4eF"/>
-                            <constraint firstItem="47R-eE-a5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="yBp-yI-wmG"/>
+                            <constraint firstItem="47R-eE-a5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yBp-yI-wmG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qXD-Fx-haS"/>
                     <connections>
                         <outlet property="dogodilaSeGreska" destination="6Eb-pL-80F" id="9nY-L9-Yan"/>
                         <outlet property="funFact" destination="a1x-OT-cII" id="IRt-4b-BeG"/>
@@ -86,7 +97,229 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="-13"/>
+            <point key="canvasLocation" x="2487" y="-22"/>
+        </scene>
+        <!--Kviz Ekran View Controller-->
+        <scene sceneID="vkU-NU-Vys">
+            <objects>
+                <viewController id="gZj-G1-ueN" customClass="KvizEkranViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fVK-0D-gix">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUN-SO-ZPW">
+                                <rect key="frame" x="20" y="64" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcl-RC-Hcb">
+                                <rect key="frame" x="50" y="104.5" width="275" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IJh-Td-mZC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-in-O7u">
+                                <rect key="frame" x="20" y="224.5" width="335" height="30"/>
+                                <state key="normal" title="Start Quiz"/>
+                                <connections>
+                                    <action selector="startQuiz:" destination="gZj-G1-ueN" eventType="touchUpInside" id="ExR-nc-6y9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wa-c2-uwm">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Odjava"/>
+                                <connections>
+                                    <action selector="odjava:" destination="gZj-G1-ueN" eventType="touchUpInside" id="d8g-cA-SEw"/>
+                                </connections>
+                            </button>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vA-pc-Mu0">
+                                <rect key="frame" x="0.0" y="291.5" width="375" height="315.5"/>
+                            </scrollView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGX-0A-6Sm">
+                                <rect key="frame" x="10" y="264.5" width="355" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DiV-in-O7u" firstAttribute="top" secondItem="jcl-RC-Hcb" secondAttribute="bottom" constant="20" id="5pD-9V-kVG"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="trailing" secondItem="CUN-SO-ZPW" secondAttribute="trailing" constant="20" id="Fue-8a-lgR"/>
+                            <constraint firstItem="PGX-0A-6Sm" firstAttribute="top" secondItem="DiV-in-O7u" secondAttribute="bottom" constant="10" id="GRd-Ex-ASp"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="trailing" secondItem="8vA-pc-Mu0" secondAttribute="trailing" id="JhI-pM-qvJ"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="trailing" secondItem="DiV-in-O7u" secondAttribute="trailing" constant="20" id="NKG-eb-mzh"/>
+                            <constraint firstItem="8vA-pc-Mu0" firstAttribute="top" secondItem="PGX-0A-6Sm" secondAttribute="bottom" constant="10" id="QYt-RI-rok"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="trailing" secondItem="jcl-RC-Hcb" secondAttribute="trailing" constant="50" id="Qgy-BO-sKU"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="trailing" secondItem="PGX-0A-6Sm" secondAttribute="trailing" constant="10" id="Qk8-gb-6nA"/>
+                            <constraint firstItem="jcl-RC-Hcb" firstAttribute="top" secondItem="CUN-SO-ZPW" secondAttribute="bottom" constant="20" id="UZ4-Il-uep"/>
+                            <constraint firstItem="jcl-RC-Hcb" firstAttribute="leading" secondItem="Xur-nM-WU3" secondAttribute="leading" constant="50" id="VO0-N6-o0G"/>
+                            <constraint firstItem="5Wa-c2-uwm" firstAttribute="top" secondItem="8vA-pc-Mu0" secondAttribute="bottom" constant="10" id="aPr-8n-2UE"/>
+                            <constraint firstItem="CUN-SO-ZPW" firstAttribute="top" secondItem="Xur-nM-WU3" secondAttribute="top" constant="20" id="jur-0D-ghP"/>
+                            <constraint firstItem="PGX-0A-6Sm" firstAttribute="leading" secondItem="Xur-nM-WU3" secondAttribute="leading" constant="10" id="kiB-zf-aHV"/>
+                            <constraint firstItem="CUN-SO-ZPW" firstAttribute="leading" secondItem="Xur-nM-WU3" secondAttribute="leading" constant="20" id="kxW-Tp-fkE"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="bottom" secondItem="5Wa-c2-uwm" secondAttribute="bottom" constant="20" id="orK-NB-BJU"/>
+                            <constraint firstItem="Xur-nM-WU3" firstAttribute="trailing" secondItem="5Wa-c2-uwm" secondAttribute="trailing" constant="20" id="qeS-ac-P7z"/>
+                            <constraint firstItem="5Wa-c2-uwm" firstAttribute="leading" secondItem="Xur-nM-WU3" secondAttribute="leading" constant="20" id="rJl-id-Zkg"/>
+                            <constraint firstItem="8vA-pc-Mu0" firstAttribute="leading" secondItem="Xur-nM-WU3" secondAttribute="leading" id="uM1-ib-EfJ"/>
+                            <constraint firstItem="DiV-in-O7u" firstAttribute="leading" secondItem="Xur-nM-WU3" secondAttribute="leading" constant="20" id="xmE-gZ-KsR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xur-nM-WU3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UPR-yl-ZDN"/>
+                    <connections>
+                        <outlet property="labelCorrect" destination="PGX-0A-6Sm" id="VWn-Zy-9J4"/>
+                        <outlet property="naslovKviza" destination="CUN-SO-ZPW" id="wg1-7Z-4i6"/>
+                        <outlet property="scrollView" destination="8vA-pc-Mu0" id="xpm-F0-WD1"/>
+                        <outlet property="slikaKviza" destination="jcl-RC-Hcb" id="K99-RO-vV7"/>
+                        <outlet property="startQuiz" destination="DiV-in-O7u" id="nIi-vT-3ST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWW-Fg-LbP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605.5999999999999" y="-22.03898050974513"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="DEm-TI-a2R">
+            <objects>
+                <viewController id="YU6-xe-4Ig" customClass="LoginViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ti-gr-nSR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Korisničko ime" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAA-br-rem">
+                                <rect key="frame" x="40" y="316.5" width="295" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lozinka" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-5h-yCy">
+                                <rect key="frame" x="40" y="370.5" width="295" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-SB-UpN">
+                                <rect key="frame" x="40" y="429.5" width="295" height="30"/>
+                                <state key="normal" title="Logiraj"/>
+                                <connections>
+                                    <action selector="logiraj:" destination="YU6-xe-4Ig" eventType="touchUpInside" id="LW9-hN-cEA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baO-fO-5Nl">
+                                <rect key="frame" x="40" y="245" width="295" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogodila se greška prilikom prijave" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqS-aV-hSe">
+                                <rect key="frame" x="10" y="630" width="355" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aOq-SB-UpN" firstAttribute="top" secondItem="gUh-5h-yCy" secondAttribute="bottom" constant="25" id="30s-E2-ehL"/>
+                            <constraint firstItem="y8U-F0-jOO" firstAttribute="trailing" secondItem="dAA-br-rem" secondAttribute="trailing" constant="40" id="3X5-Og-KMv"/>
+                            <constraint firstItem="dAA-br-rem" firstAttribute="centerX" secondItem="5Ti-gr-nSR" secondAttribute="centerX" id="3so-86-9b3"/>
+                            <constraint firstItem="y8U-F0-jOO" firstAttribute="trailing" secondItem="aOq-SB-UpN" secondAttribute="trailing" constant="40" id="7hX-es-Dcq"/>
+                            <constraint firstItem="y8U-F0-jOO" firstAttribute="trailing" secondItem="gUh-5h-yCy" secondAttribute="trailing" constant="40" id="CNJ-UK-Qt9"/>
+                            <constraint firstAttribute="bottom" secondItem="eqS-aV-hSe" secondAttribute="bottom" constant="20" id="Jhz-xL-rXC"/>
+                            <constraint firstItem="baO-fO-5Nl" firstAttribute="leading" secondItem="y8U-F0-jOO" secondAttribute="leading" constant="40" id="K9Q-lG-ml1"/>
+                            <constraint firstItem="eqS-aV-hSe" firstAttribute="leading" secondItem="5Ti-gr-nSR" secondAttribute="leading" constant="10" id="R54-bw-Rmx"/>
+                            <constraint firstItem="dAA-br-rem" firstAttribute="top" secondItem="baO-fO-5Nl" secondAttribute="bottom" constant="50" id="TcW-Ox-oBg"/>
+                            <constraint firstItem="dAA-br-rem" firstAttribute="leading" secondItem="y8U-F0-jOO" secondAttribute="leading" constant="40" id="WRT-Bs-HjB"/>
+                            <constraint firstItem="aOq-SB-UpN" firstAttribute="leading" secondItem="y8U-F0-jOO" secondAttribute="leading" constant="40" id="ePj-ji-stC"/>
+                            <constraint firstAttribute="trailing" secondItem="eqS-aV-hSe" secondAttribute="trailing" constant="10" id="fJI-2l-ZXx"/>
+                            <constraint firstItem="dAA-br-rem" firstAttribute="centerY" secondItem="5Ti-gr-nSR" secondAttribute="centerY" id="fYY-Ty-6ij"/>
+                            <constraint firstItem="gUh-5h-yCy" firstAttribute="leading" secondItem="y8U-F0-jOO" secondAttribute="leading" constant="40" id="fi0-Eh-QmJ"/>
+                            <constraint firstItem="gUh-5h-yCy" firstAttribute="top" secondItem="dAA-br-rem" secondAttribute="bottom" constant="20" id="id3-S0-omo"/>
+                            <constraint firstItem="y8U-F0-jOO" firstAttribute="trailing" secondItem="baO-fO-5Nl" secondAttribute="trailing" constant="40" id="nbP-hD-3FQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y8U-F0-jOO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6bf-Ep-ZiE"/>
+                    <connections>
+                        <outlet property="dogodilaSeGreska" destination="eqS-aV-hSe" id="C5k-jV-Svd"/>
+                        <outlet property="korisnickoIme" destination="dAA-br-rem" id="21z-2e-M6c"/>
+                        <outlet property="lozinka" destination="gUh-5h-yCy" id="dTf-eG-mFH"/>
+                        <segue destination="j7d-8U-KSK" kind="show" identifier="segueListaKvizova" id="5LA-pw-PnE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYv-iX-Dha" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="-22.03898050974513"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YFe-5k-vEF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N8T-a5-sGB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jRY-l2-87g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YU6-xe-4Ig" kind="relationship" relationship="rootViewController" id="hub-Go-Nwu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WML-S7-J6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-887.20000000000005" y="-22.03898050974513"/>
+        </scene>
+        <!--Lista Kvizova View Controller-->
+        <scene sceneID="NQH-Yv-oFA">
+            <objects>
+                <viewController storyboardIdentifier="listaKvizovaViewController" id="j7d-8U-KSK" customClass="ListaKvizovaViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R1c-Vj-f4K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogodila se greška prilikom dohvata kvizova" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWn-iB-sax">
+                                <rect key="frame" x="10" y="630" width="355" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RLq-Ov-UWC">
+                                <rect key="frame" x="0.0" y="44" width="375" height="576"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quizCellReuseIdentifier" rowHeight="150" id="4vu-SM-2E4" customClass="QuizTableViewCell" customModule="QuizApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4vu-SM-2E4" id="B1f-O2-86b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4kM-1f-IyW" firstAttribute="bottom" secondItem="fWn-iB-sax" secondAttribute="bottom" constant="20" id="N6T-1J-DzL"/>
+                            <constraint firstItem="4kM-1f-IyW" firstAttribute="trailing" secondItem="RLq-Ov-UWC" secondAttribute="trailing" id="cYt-Yn-7Cc"/>
+                            <constraint firstItem="RLq-Ov-UWC" firstAttribute="leading" secondItem="4kM-1f-IyW" secondAttribute="leading" id="feI-GC-C6f"/>
+                            <constraint firstItem="fWn-iB-sax" firstAttribute="top" secondItem="RLq-Ov-UWC" secondAttribute="bottom" constant="10" id="gXr-cI-mwe"/>
+                            <constraint firstItem="4kM-1f-IyW" firstAttribute="trailing" secondItem="fWn-iB-sax" secondAttribute="trailing" constant="10" id="icS-MF-xej"/>
+                            <constraint firstItem="RLq-Ov-UWC" firstAttribute="top" secondItem="4kM-1f-IyW" secondAttribute="top" id="qam-v6-YZM"/>
+                            <constraint firstItem="fWn-iB-sax" firstAttribute="leading" secondItem="4kM-1f-IyW" secondAttribute="leading" constant="10" id="wZJ-qf-oOY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4kM-1f-IyW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gNF-Jy-qyH"/>
+                    <connections>
+                        <outlet property="dogodilaSeGreska" destination="fWn-iB-sax" id="AHc-ca-Enw"/>
+                        <outlet property="tableView" destination="RLq-Ov-UWC" id="NkZ-Qu-dpZ"/>
+                        <segue destination="gZj-G1-ueN" kind="show" identifier="segueKvizEkran" id="IpZ-gP-1xG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3S-cj-oSg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.79999999999995" y="-22.03898050974513"/>
         </scene>
     </scenes>
 </document>

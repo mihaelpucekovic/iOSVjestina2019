@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mihael. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class QuizService {

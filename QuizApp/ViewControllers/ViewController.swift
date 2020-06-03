@@ -9,18 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIButtonDelegate {
-    func answerPressed(_ sender: UIButton, selectedAnswer: Int) {
-        if !answered {
-            if selectedAnswer == correct_answer {
-                sender.backgroundColor = UIColor.green
-            }
-            else {
-                sender.backgroundColor = UIColor.red
-            }
-            
-            answered = true
-        }
-    }
     
     @IBOutlet weak var funFact: UILabel!
     @IBOutlet weak var naslovKviza: UILabel!
@@ -97,6 +85,12 @@ class ViewController: UIViewController, UIButtonDelegate {
         }
     }
     
+    @IBAction func odjava(_ sender: UIButton) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set("", forKey: "token")
+        userDefaults.set("", forKey: "id")
+    }
+    
     func clearQuestion() {
         naslovKviza.text = "Kviz"
         slikaKviza.image = nil
@@ -113,6 +107,19 @@ class ViewController: UIViewController, UIButtonDelegate {
         
         answered = false
         dogodilaSeGreska.isHidden = true
+    }
+    
+    func answerPressed(_ sender: UIButton, selectedAnswer: Int) {
+        if !answered {
+            if selectedAnswer == correct_answer {
+                sender.backgroundColor = UIColor.green
+            }
+            else {
+                sender.backgroundColor = UIColor.red
+            }
+            
+            answered = true
+        }
     }
 }
 

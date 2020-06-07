@@ -16,8 +16,6 @@ class ListaKvizovaViewController: UIViewController, UITableViewDelegate, UITable
     var quizzes: [Quiz]?
     var refreshControl: UIRefreshControl!
     var quiz: Quiz?
-    var titleString: [Int : String] = [:]
-    var rowString: [Int : [String]] = [:]
     var categoriesDict: [Int : String] = [:]
     var quizzesDict: [Int : [Quiz]] = [:]
     
@@ -78,14 +76,6 @@ class ListaKvizovaViewController: UIViewController, UITableViewDelegate, UITable
                 self.refreshControl.endRefreshing()
             }
         }
-    }
-    
-    func quiz(atIndex index: Int) -> Quiz? {
-        guard let quizzes = quizzes else {
-            return nil
-        }
-        
-        return quizzes[index]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -179,7 +169,7 @@ class ListaKvizovaViewController: UIViewController, UITableViewDelegate, UITable
     @objc func odjava() {
         let userDefaults = UserDefaults.standard
         userDefaults.set("", forKey: "token")
-        userDefaults.set("", forKey: "id")
+        userDefaults.set("", forKey: "user_id")
         
         self.navigationController!.popViewController(animated: true)
     }

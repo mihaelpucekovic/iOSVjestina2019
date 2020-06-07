@@ -52,8 +52,6 @@ class ViewController: UIViewController, UIButtonDelegate {
                         brojPitanjaNBA += contains.count
                     }
                     
-                    
-                    
                     self?.funFact.text = "Fun Fact: Ukupno pitanja koji sadrže riječ NBA: \(brojPitanjaNBA)"
                     
                     let randomQuizIndex = Int.random(in: 0..<quizzes!.count)
@@ -88,7 +86,7 @@ class ViewController: UIViewController, UIButtonDelegate {
     @IBAction func odjava(_ sender: UIButton) {
         let userDefaults = UserDefaults.standard
         userDefaults.set("", forKey: "token")
-        userDefaults.set("", forKey: "id")
+        userDefaults.set("", forKey: "user_id")
     }
     
     func clearQuestion() {

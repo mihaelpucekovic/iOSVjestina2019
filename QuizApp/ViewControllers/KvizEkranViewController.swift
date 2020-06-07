@@ -57,35 +57,37 @@ class KvizEkranViewController: UIViewController, UIButtonDelegateSQ, UIScrollVie
     @IBAction func odjava(_ sender: UIButton) {
         let userDefaults = UserDefaults.standard
         userDefaults.set("", forKey: "token")
-        userDefaults.set("", forKey: "id")
+        userDefaults.set("", forKey: "user_id")
+        
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
    func answerPressed(_ sender: UIButton, selectedAnswer: Int) {
     if current_question_index < totalQuestions {
-               if !answered {
-                if selectedAnswer == quiz?.questions[current_question_index].correct_answer {
-                    sender.backgroundColor = UIColor.green
-                    
-                    totalCorrectAnswers += 1
-                    self.labelCorrect.text = "Correct: \(totalCorrectAnswers)"
-                }
-                else {
-                    sender.backgroundColor = UIColor.red
-                }
-                                 
-                answered = true
-               }
-                  
-                  current_question_index += 1
-                  
-                  if current_question_index < totalQuestions {
-                      scrollView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(current_question_index), y: 0), animated: true)
-                    
-                    answered = false
-                  }
-                  else {
-                    quizFinished()
-                    }
+        if !answered {
+            if selectedAnswer == quiz?.questions[current_question_index].correct_answer {
+                 sender.backgroundColor = UIColor.green
+                 
+                 totalCorrectAnswers += 1
+                 self.labelCorrect.text = "Correct: \(totalCorrectAnswers)"
+             }
+             else {
+                 sender.backgroundColor = UIColor.red
+             }
+                              
+             answered = true
+        }
+               
+        current_question_index += 1
+               
+        if current_question_index < totalQuestions {
+            scrollView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(current_question_index), y: 0), animated: true)
+                 
+            answered = false
+        }
+        else {
+            quizFinished()
+        }
     }
    }
     

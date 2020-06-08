@@ -29,10 +29,8 @@ class ViewController: UIViewController, UIButtonDelegate {
     
     @IBAction func dohvatiKvizove(_ sender: UIButton) {
         clearQuestion()
-        
-        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
-        
-        QuizService().fetchQuizzes(urlString: urlString) { [weak self] (quizzes) in
+     
+        QuizService().fetchQuizzes() { [weak self] (quizzes) in
             self!.quizzes = quizzes
             
             DispatchQueue.main.async {

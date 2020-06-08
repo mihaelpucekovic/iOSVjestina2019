@@ -35,9 +35,7 @@ class ListaKvizovaViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func dohvatiKvizove() {
-        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
-        
-        QuizService().fetchQuizzes(urlString: urlString) { [weak self] (quizzes) in
+        QuizService().fetchQuizzes() { [weak self] (quizzes) in
             self!.quizzes = quizzes
             self?.refresh()
         }

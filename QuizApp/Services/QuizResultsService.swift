@@ -9,7 +9,7 @@
 import UIKit
 
 class QuizResultsService {
-    func getQuizResults(quiz_id: Int, token: String, completion: @escaping ((String?) -> Void)){
+    func getQuizResults(quiz_id: Int, token: String, completion: @escaping (([Result]?) -> Void)){
         let urlString = "https://iosquiz.herokuapp.com/api/score?quiz_id=\(quiz_id)"
         
          if let url = URL(string: urlString) {
@@ -23,8 +23,23 @@ class QuizResultsService {
                  if let data = data {
                      do {
                         let json = try JSONSerialization.jsonObject(with: data, options: [])
-                        print(json)
-                        
+                      
+                        if let results = json as? [[String: Any]] {
+                            let resultsArray = results.map({ json -> Result? in
+                                if
+                                    let scoreString = json["score"] as? String,
+                                    let score = Double(scoreString),
+                                    let username = json["username"] as? String {
+                                    let result = Result(score: score, username: username)
+                                    return result
+                                } else {
+                                    return nil
+                                }
+                            }).filter { $0 != nil } .map { $0! } .sorted(by: { $0.score > $1.score })
+                            completion(Array(resultsArray.prefix(20)))
+                        } else {
+                            completion(nil)
+                        }
                      } catch {
                          completion(nil)
                      }

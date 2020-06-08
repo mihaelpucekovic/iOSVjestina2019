@@ -22,6 +22,10 @@
 		4830FB6324675E530049CED5 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4830FB6224675E530049CED5 /* QuestionView.xib */; };
 		4830FB6524695BB10049CED5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830FB6424695BB10049CED5 /* LoginViewController.swift */; };
 		4830FB6724695CCF0049CED5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830FB6624695CCF0049CED5 /* LoginService.swift */; };
+		4845B2F3248D84B2004AFA8A /* RezultatiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845B2F2248D84B2004AFA8A /* RezultatiViewController.swift */; };
+		4845B2F5248D8706004AFA8A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845B2F4248D8706004AFA8A /* Result.swift */; };
+		4845B2F7248D8F93004AFA8A /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845B2F6248D8F93004AFA8A /* ResultTableViewCell.swift */; };
+		4845B2F9248D8FF5004AFA8A /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4845B2F8248D8FF5004AFA8A /* ResultTableViewCell.xib */; };
 		4847FE4024802B3600861869 /* KvizEkranViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847FE3F24802B3600861869 /* KvizEkranViewController.swift */; };
 		488137DC247ED23F00D0EF39 /* ListaKvizovaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488137DB247ED23F00D0EF39 /* ListaKvizovaViewController.swift */; };
 		488137DE247ED47600D0EF39 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488137DD247ED47600D0EF39 /* QuizTableViewCell.swift */; };
@@ -48,6 +52,10 @@
 		4830FB6224675E530049CED5 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		4830FB6424695BB10049CED5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4830FB6624695CCF0049CED5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		4845B2F2248D84B2004AFA8A /* RezultatiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RezultatiViewController.swift; sourceTree = "<group>"; };
+		4845B2F4248D8706004AFA8A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4845B2F6248D8F93004AFA8A /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		4845B2F8248D8FF5004AFA8A /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		4847FE3F24802B3600861869 /* KvizEkranViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KvizEkranViewController.swift; sourceTree = "<group>"; };
 		488137DB247ED23F00D0EF39 /* ListaKvizovaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaKvizovaViewController.swift; sourceTree = "<group>"; };
 		488137DD247ED47600D0EF39 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			children = (
 				4830FB512465DFBC0049CED5 /* Quiz.swift */,
 				4830FB532466F01D0049CED5 /* Question.swift */,
+				4845B2F4248D8706004AFA8A /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 				488137DF247ED72600D0EF39 /* QuizTableViewCell.xib */,
 				482A86A22481392100F8FDAE /* SingleQuestionView.swift */,
 				482A86A42481393C00F8FDAE /* SingleQuestionView.xib */,
+				4845B2F6248D8F93004AFA8A /* ResultTableViewCell.swift */,
+				4845B2F8248D8FF5004AFA8A /* ResultTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +151,7 @@
 				488137DB247ED23F00D0EF39 /* ListaKvizovaViewController.swift */,
 				4847FE3F24802B3600861869 /* KvizEkranViewController.swift */,
 				4830FB3D246499970049CED5 /* ViewController.swift */,
+				4845B2F2248D84B2004AFA8A /* RezultatiViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 				4830FB462464999A0049CED5 /* LaunchScreen.storyboard in Resources */,
 				482A86A52481393C00F8FDAE /* SingleQuestionView.xib in Resources */,
 				4830FB432464999A0049CED5 /* Assets.xcassets in Resources */,
+				4845B2F9248D8FF5004AFA8A /* ResultTableViewCell.xib in Resources */,
 				488137E0247ED72600D0EF39 /* QuizTableViewCell.xib in Resources */,
 				4830FB41246499970049CED5 /* Main.storyboard in Resources */,
 			);
@@ -224,6 +237,7 @@
 				4830FB3A246499970049CED5 /* AppDelegate.swift in Sources */,
 				4830FB6124675E3C0049CED5 /* QuestionView.swift in Sources */,
 				4830FB6724695CCF0049CED5 /* LoginService.swift in Sources */,
+				4845B2F3248D84B2004AFA8A /* RezultatiViewController.swift in Sources */,
 				4830FB6524695BB10049CED5 /* LoginViewController.swift in Sources */,
 				488137DE247ED47600D0EF39 /* QuizTableViewCell.swift in Sources */,
 				4830FB542466F01D0049CED5 /* Question.swift in Sources */,
@@ -231,7 +245,9 @@
 				4830FB4F2465DEC10049CED5 /* QuizService.swift in Sources */,
 				4884FCD4248500FB00DC12AA /* SendQuizResultService.swift in Sources */,
 				488137DC247ED23F00D0EF39 /* ListaKvizovaViewController.swift in Sources */,
+				4845B2F5248D8706004AFA8A /* Result.swift in Sources */,
 				4830FB3C246499970049CED5 /* SceneDelegate.swift in Sources */,
+				4845B2F7248D8F93004AFA8A /* ResultTableViewCell.swift in Sources */,
 				48F2248A2486F10B0022C26B /* QuizResultsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

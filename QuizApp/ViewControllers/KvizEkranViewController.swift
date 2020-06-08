@@ -149,5 +149,13 @@ class KvizEkranViewController: UIViewController, UIButtonDelegateSQ, UIScrollVie
             scrollView.addSubview(questionViews[i])
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueRezultati" {
+            let rezultatiViewController = segue.destination as! RezultatiViewController
+            
+            rezultatiViewController.quiz_id = quiz!.id
+        }
+    }
 }
 

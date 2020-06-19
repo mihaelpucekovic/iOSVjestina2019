@@ -34,10 +34,7 @@ class QuizTableViewCell: UITableViewCell {
     func setup(withQuiz quiz: Quiz) {        
         quizTitle.text = quiz.title
         quizDescription.text = quiz.description
-        
-        let urlString = URL(string: quiz.image)
-        let data = try? Data(contentsOf: urlString!)
-        quizImage.image = UIImage(data: data!)
+        quizImage.image = UIImage(data: quiz.imageData)
         
         let level = quiz.level
         

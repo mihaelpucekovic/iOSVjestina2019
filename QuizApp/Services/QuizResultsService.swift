@@ -9,7 +9,7 @@
 import UIKit
 
 class QuizResultsService {
-    func getQuizResults(quiz_id: Int, token: String, completion: @escaping (([Result]?) -> Void)){
+    func getQuizResults(quiz_id: Int, token: String, completion: @escaping ((ResultEnum<Any>?) -> Void)){
         let urlString = "https://iosquiz.herokuapp.com/api/score?quiz_id=\(quiz_id)"
         
          if let url = URL(string: urlString) {
@@ -25,7 +25,7 @@ class QuizResultsService {
                         let json = try JSONSerialization.jsonObject(with: data, options: [])
                       
                         if let results = json as? [[String: Any]] {
-                            let resultsArray = results.map({ json -> Result? in
+                            let resultsArray = results.compactMap{ json -> Result? in
                                 if
                                     let scoreString = json["score"] as? String,
                                     let score = Double(scoreString),
@@ -35,22 +35,22 @@ class QuizResultsService {
                                 } else {
                                     return nil
                                 }
-                            }).filter { $0 != nil } .map { $0! } .sorted(by: { $0.score > $1.score })
-                            completion(Array(resultsArray.prefix(20)))
+                            }.sorted(by: { $0.score > $1.score })
+                            completion(.success(Array(resultsArray.prefix(20))))
                         } else {
-                            completion(nil)
+                            completion(.failure("Failure"))
                         }
                      } catch {
-                         completion(nil)
+                         completion(.failure("Failure"))
                      }
                  } else {
-                     completion(nil)
+                     completion(.failure("Failure"))
                  }
              }
              
              dataTask.resume()
          } else {
-             completion(nil)
+             completion(.failure("Failure"))
          }
      }
 }

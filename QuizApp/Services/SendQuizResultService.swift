@@ -9,7 +9,7 @@
 import UIKit
 
 class SendQuizResultService {
-    func sendQuizResults(quiz_id: Int, user_id: Int, time: Double, no_of_correct: Int, token: String, completion: @escaping ((String?) -> Void)){
+    func sendQuizResults(quiz_id: Int, user_id: Int, time: Double, no_of_correct: Int, token: String, completion: @escaping ((ResultEnum<Any>?) -> Void)){
         let urlString = "https://iosquiz.herokuapp.com/api/result"
         
          if let url = URL(string: urlString) {
@@ -27,23 +27,22 @@ class SendQuizResultService {
                  if let data = data {
                      do {
                         let json = try JSONSerialization.jsonObject(with: data, options: [])
-                        print(json)
                         if let text = json as? [String: Any], let errors = text["errors"] as? [String: Any] {
-                           completion("Error: \(errors)")
+                            completion(.failure("Error: \(errors)"))
                         } else {
-                           completion("Success")
+                            completion(.success("Success"))
                         }
                      } catch {
-                         completion(nil)
+                         completion(.failure("Failure"))
                      }
                  } else {
-                     completion(nil)
+                     completion(.failure("Failure"))
                  }
              }
              
              dataTask.resume()
          } else {
-             completion(nil)
+             completion(.failure("Failure"))
          }
      }
 }

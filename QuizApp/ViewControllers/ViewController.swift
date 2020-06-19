@@ -6,6 +6,8 @@
 //  Copyright © 2020 Mihael. All rights reserved.
 //
 
+// For DZ1
+
 import UIKit
 
 class ViewController: UIViewController, UIButtonDelegate {
@@ -30,53 +32,59 @@ class ViewController: UIViewController, UIButtonDelegate {
     @IBAction func dohvatiKvizove(_ sender: UIButton) {
         clearQuestion()
      
-        QuizService().fetchQuizzes() { [weak self] (quizzes) in
-            self!.quizzes = quizzes
-            
+        QuizService().fetchQuizzes() { [weak self] (result) in
             DispatchQueue.main.async {
-                if quizzes == nil {
+                switch result {
+                case .success(let quizzes as [Quiz]):
+                    self!.quizzes = quizzes
+                case .failure( _):
+                    self!.dogodilaSeGreska.isHidden = false
+                case .error(_):
+                    self!.dogodilaSeGreska.isHidden = false
+                case .none:
+                    self!.dogodilaSeGreska.isHidden = false
+                case .some(.success(_)):
                     self!.dogodilaSeGreska.isHidden = false
                 }
-                else {
-                    var brojPitanjaNBA = 0
+                
+                var brojPitanjaNBA = 0
+                
+                for quiz in self!.quizzes! {
+                    let questions = quiz.questions
                     
-                    for quiz in quizzes! {
-                        let questions = quiz.questions
-                        
-                        let contains = questions.filter { (singleQuestion) -> Bool in
-                            return singleQuestion.question.contains("NBA") == true
-                        }
-                        
-                        brojPitanjaNBA += contains.count
+                    let contains = questions.filter { (singleQuestion) -> Bool in
+                        return singleQuestion.question.contains("NBA") == true
                     }
                     
-                    self?.funFact.text = "Fun Fact: Ukupno pitanja koji sadrže riječ NBA: \(brojPitanjaNBA)"
-                    
-                    let randomQuizIndex = Int.random(in: 0..<quizzes!.count)
-                    let selectedQuiz = quizzes![randomQuizIndex]
-                    
-                    self!.naslovKviza.text = "\(selectedQuiz.title)"
-                    
-                    let url = URL(string: quizzes![randomQuizIndex].image)
-                    let data = try? Data(contentsOf: url!)
-                    self?.slikaKviza.image = UIImage(data: data!)
-                    
-                    let randomQuestionIndex = Int.random(in: 0..<selectedQuiz.questions.count)
-                    let selectedQuestion = selectedQuiz.questions[randomQuestionIndex]
-                    
-                    let questionText = selectedQuestion.question
-                    let answer0 = selectedQuestion.answers[0]
-                    let answer1 = selectedQuestion.answers[1]
-                    let answer2 = selectedQuestion.answers[2]
-                    let answer3 = selectedQuestion.answers[3]
-                    self!.correct_answer = selectedQuestion.correct_answer
-                    
-                    self!.questionView.pitanje.text = "\(questionText)"
-                    self!.questionView.odgovor1.setTitle("\(answer0)", for: .normal)
-                    self!.questionView.odgovor2.setTitle("\(answer1)", for: .normal)
-                    self!.questionView.odgovor3.setTitle("\(answer2)", for: .normal)
-                    self!.questionView.odgovor4.setTitle("\(answer3)", for: .normal)
+                    brojPitanjaNBA += contains.count
                 }
+                
+                self?.funFact.text = "Fun Fact: Ukupno pitanja koji sadrže riječ NBA: \(brojPitanjaNBA)"
+                
+                let randomQuizIndex = Int.random(in: 0..<self!.quizzes!.count)
+                let selectedQuiz = self!.quizzes![randomQuizIndex]
+                
+                self!.naslovKviza.text = "\(selectedQuiz.title)"
+                
+                let url = URL(string: self!.quizzes![randomQuizIndex].image)
+                let data = try? Data(contentsOf: url!)
+                self?.slikaKviza.image = UIImage(data: data!)
+                
+                let randomQuestionIndex = Int.random(in: 0..<selectedQuiz.questions.count)
+                let selectedQuestion = selectedQuiz.questions[randomQuestionIndex]
+                
+                let questionText = selectedQuestion.question
+                let answer0 = selectedQuestion.answers[0]
+                let answer1 = selectedQuestion.answers[1]
+                let answer2 = selectedQuestion.answers[2]
+                let answer3 = selectedQuestion.answers[3]
+                self!.correct_answer = selectedQuestion.correct_answer
+                
+                self!.questionView.pitanje.text = "\(questionText)"
+                self!.questionView.odgovor1.setTitle("\(answer0)", for: .normal)
+                self!.questionView.odgovor2.setTitle("\(answer1)", for: .normal)
+                self!.questionView.odgovor3.setTitle("\(answer2)", for: .normal)
+                self!.questionView.odgovor4.setTitle("\(answer3)", for: .normal)
             }
         }
     }
@@ -85,6 +93,7 @@ class ViewController: UIViewController, UIButtonDelegate {
         let userDefaults = UserDefaults.standard
         userDefaults.set("", forKey: "token")
         userDefaults.set("", forKey: "user_id")
+        userDefaults.set("", forKey: "username")
     }
     
     func clearQuestion() {
@@ -105,9 +114,9 @@ class ViewController: UIViewController, UIButtonDelegate {
         dogodilaSeGreska.isHidden = true
     }
     
-    func answerPressed(_ sender: UIButton, selectedAnswer: Int) {
+    func selectedAnswer(_ sender: UIButton, answer: Int) {
         if !answered {
-            if selectedAnswer == correct_answer {
+            if answer == correct_answer {
                 sender.backgroundColor = UIColor.green
             }
             else {

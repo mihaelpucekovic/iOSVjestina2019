@@ -36,21 +36,25 @@ class RezultatiViewController: UIViewController, UITableViewDelegate, UITableVie
         let userDefaults = UserDefaults.standard
         let token = userDefaults.string(forKey: "token")
         
-        QuizResultsService().getQuizResults(quiz_id: quiz_id, token: token!) { [weak self] (results) in
-            self!.results = results
-            self?.refresh()
+        QuizResultsService().getQuizResults(quiz_id: quiz_id, token: token!) { [weak self] (result) in
+            switch result {
+            case .success(let results as [Result]):
+                self!.results = results
+                self?.refresh()
+            case .failure( _):
+                self!.dogodilaSeGreska.isHidden = false
+            case .error(_):
+                self!.dogodilaSeGreska.isHidden = false
+            case .none: break
+            case .some(.success(_)): break
+            }
         }
     }
     
     @objc func refresh() {
         DispatchQueue.main.async {
-            if self.results == nil {
-                self.dogodilaSeGreska.isHidden = false
-            }
-            else {
-                self.tableView.reloadData()
-                self.refreshControl.endRefreshing()
-            }
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     
@@ -67,5 +71,10 @@ class RezultatiViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return cell
     }
+    
+    @IBAction func zatvori(_ sender: UIButton) {
+        self.navigationController!.popViewController(animated: true)
+    }
+    
 }
 

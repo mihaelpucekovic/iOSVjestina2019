@@ -9,7 +9,7 @@
 import UIKit
 
 class QuizService {
-    func fetchQuizzes(completion: @escaping (([Quiz]?) -> Void)){
+    func fetchQuizzes(completion: @escaping ((ResultEnum<Any>?) -> Void)){
         let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
         
         if let url = URL(string: urlString) {
@@ -21,7 +21,7 @@ class QuizService {
                         let json = try JSONSerialization.jsonObject(with: data, options: [])
 
                         if let quizzesList = json as? [String: Any], let quizzes = quizzesList["quizzes"] as? [[String: Any]] {
-                            let quizzesArray = quizzes.map({ json -> Quiz? in
+                            let quizzesArray = quizzes.compactMap{ json -> Quiz? in
                                 if
                                     let id = json["id"] as? Int,
                                     let title = json["title"] as? String,
@@ -30,27 +30,41 @@ class QuizService {
                                     let level = json["level"] as? Int,
                                     let image = json["image"] as? String,
                                     let questions = json["questions"] as? [[String: Any]] {
-                                    let quiz = Quiz(id: id, title: title, description: description, category: category, level: level, image: image, questions: questions)
+                                    var questionObjects = [Question]()
+                                    
+                                    for singleQuestion in questions {
+                                        let id = singleQuestion["id"] as? Int
+                                        let question = singleQuestion["question"] as? String
+                                        let answers = singleQuestion["answers"] as? [String]
+                                        let correct_answer = singleQuestion["correct_answer"] as? Int
+                                        let questionObject = Question(id: id!, question: question!, answers: answers!, correct_answer: correct_answer!)
+                                        questionObjects.append(questionObject)
+                                    }
+                                    
+                                    let urlString = URL(string: image)
+                                    let imageData = try? Data(contentsOf: urlString!)
+                                    
+                                    let quiz = Quiz(id: id, title: title, description: description, category: category, level: level, image: image, imageData: imageData!, questions: questionObjects)
                                     return quiz
                                 } else {
                                     return nil
                                 }
-                            }).filter { $0 != nil } .map { $0! }
-                            completion(quizzesArray)
+                            }
+                            completion(.success(quizzesArray))
                         } else {
-                            completion(nil)
+                            completion(.failure("Failure"))
                         }
                     } catch {
-                        completion(nil)
+                        completion(.failure("Failure"))
                     }
                 } else {
-                    completion(nil)
+                    completion(.failure("Failure"))
                 }
             }
             
             dataTask.resume()
         } else {
-            completion(nil)
+            completion(.failure("Failure"))
         }
     }
 }

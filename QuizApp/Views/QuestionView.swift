@@ -9,12 +9,11 @@
 import UIKit
 
 protocol UIButtonDelegate: AnyObject {
-    func answerPressed(_ sender:UIButton, selectedAnswer:Int)
+    func selectedAnswer(_ sender:UIButton, answer:Int)
 }
 
-class QuestionView: UIView {
+class QuestionView: UITableViewCell {
 
-    @IBOutlet var contentView: UIView!
     @IBOutlet weak var pitanje: UILabel!
     @IBOutlet weak var odgovor1: UIButton!
     @IBOutlet weak var odgovor2: UIButton!
@@ -22,35 +21,23 @@ class QuestionView: UIView {
     @IBOutlet weak var odgovor4: UIButton!
     
     weak var delegate:UIButtonDelegate?
+    var correct_answer = -1
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-              
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
-    private func commonInit() {
-        Bundle.main.loadNibNamed("QuestionView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        pitanje.text = ""
+        odgovor1.setTitle("", for: .normal)
+        odgovor2.setTitle("", for: .normal)
+        odgovor3.setTitle("", for: .normal)
+        odgovor4.setTitle("", for: .normal)
+        correct_answer = -1
     }
 
-
-    @IBAction func answer1Selected(_ sender: UIButton) {
-        delegate?.answerPressed(sender, selectedAnswer: 0)
-    }
-    @IBAction func answer2Selected(_ sender: UIButton) {
-        delegate?.answerPressed(sender, selectedAnswer: 1)
-    }
-    @IBAction func answer3Selected(_ sender: UIButton) {
-        delegate?.answerPressed(sender, selectedAnswer: 2)
-    }
-    @IBAction func answer4Selected(_ sender: UIButton) {
-        delegate?.answerPressed(sender, selectedAnswer: 3)
+    @IBAction func answerPressed(_ sender: UIButton) {
+        delegate?.selectedAnswer(sender, answer: sender.tag)
     }
 }

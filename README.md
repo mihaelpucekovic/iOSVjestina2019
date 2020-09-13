@@ -5,7 +5,7 @@ Project done on course Service and application development for iOS.
 Course was held on Faculty of Electrical Engineering and Computing in collaboration with company Five.
 
 
-About:
+**About:**
 
 Quiz App contains quizzes that users can play. 
 
@@ -29,28 +29,28 @@ Throught TabBar user can navigate throught Quizzes, Search and Settings.
 Inside Search screen user can search for quiz by keywords.
 
 
-Login form with animation:
+**Login form with animation:**
 
 ![Animated login](https://i.imgur.com/eFTxkEe.png)
 
 
 
-Quizzes separated into categories:
+**Quizzes separated into categories:**
 
 ![Quizzes separated into categories](https://i.imgur.com/Tg3TWy5.png)
 
 
-Quiz screen:
+**Quiz screen:**
 
 ![Quiz screen](https://i.imgur.com/AXPiV97.png)
 
 
-Search screen:
+**Search screen:**
 
 ![Search screen](https://i.imgur.com/m8xy21r.png)
 
 
-Continuing already started quiz:
+**Continuing already started quiz:**
 
 ![Continuing already started quiz](https://i.imgur.com/K93Em9F.png)
 
